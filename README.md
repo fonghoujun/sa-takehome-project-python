@@ -65,11 +65,8 @@ I would implement a mechanism to send an Email Confirmation with the order detai
 
 Reference - https://zapier.com/apps/mailgun/integrations/stripe
 
-### Caching
-While implementing the application, I had to input my checkout details every time the server was restarted. I would implement a way to persist the customer's input information. 
-
 ### Cart system
-Right now, it only allows customers to checkout one book at any time. I would implement a cart system where customers have the ability to add multiple books into their cart. I would also use `caching` as mentioned previously to ensure that the selections done by the customer are saved.  
+Right now, it only allows customers to checkout one book at any time. I would implement a cart system where customers have the ability to add multiple books into their cart. I would also use caching to ensure that the customer's cart details are saved.  
 
 ### Implement Stripe Radar
 I would add an additional layer of fraud detection with Stripe Radar. With the simplicity and customisable nature of Stripe Radar, enabling it would give an additional layer of security for the application.
@@ -78,4 +75,4 @@ I would add an additional layer of fraud detection with Stripe Radar. With the s
 Based on the location of the item that was purchased, this would introduce different ways to pay for an item outside of using a credit card. 
 
 # Key Takeaways
-Overall, this has been a really fun take home project that I've done. It has provided hands-on experience with integrating Stripe into a full-stack application. I have also gained a stronger understanding of Stripe's flexibility and features, as well an exposure to end-to-end web development.
+Overall, this has been a really fun take home project that I've done. It has provided hands-on experience with integrating Stripe into a full-stack application. I have also gained a stronger understanding of Stripe's flexibility and features, as well as an exposure to end-to-end web development.
