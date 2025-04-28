@@ -1,8 +1,8 @@
-# Take home project
+# Stripe Integration Take-Home project
 This is a simple e-commerce application that a customer can use to purchase a book, but it's missing the payments functionality — your goal is to integrate Stripe to get this application running!
 
 # How does the solution work?
-The solution uses Flask as a lightweight web framework for python. It utilises web server libraries such as Werkzeug and WSGI in the backend. It also allows us to use features such as:
+The solution uses Flask as a lightweight web framework for python. It utilises Flask's built-in server tools and and WSGI in the backend. It also allows us to use features such as:
 
 - Async / Await
 - An interactive debugger
@@ -25,18 +25,18 @@ To launch the project locally, you'll have to set up the correct environment and
 6. Create a virtual environment that will house all your requirements for the application
     ```
     python3 -m venv .venv
-    . ./venv/bin/activate
+    source ./venv/bin/activate
     pip3 install Flask
     pip3 install -r requirements.txt
     ```
-7. Once the virutal environment is activated, you can run the `flask run` command in your terminal.
+7. Once the virtual environment is activated, you can run the `flask run` command in your terminal.
 8. The local server will be activated at http://127.0.0.1:5000
     ![image](public/images/landing_page.png)
 
 # Navigating through the application
 To use the application, you would have to click on a book to purchase, which will direct you to the checkout page.
 
-Next, please input your shipping and payment details. A sample address will work as this application does not validate whether the address exists. Please use `4242 4242 4242 4242` as your sample card.
+Next, please input your shipping and payment details. A sample address will work as this application does not validate whether the address exists. Please use Stripe's sample card `4242 4242 4242 4242` with any future expiration and CVC number.
 
 Finally, the application will show you your Stripe payment ID and shipping details.
 
@@ -55,7 +55,7 @@ When starting the assignment, it required me to implement Stripe Elements paymen
 After looking through the template code, I had to identify where to implement `CreatePaymentIntent` within the application. While implementing this, I had to refer back to the console output from the browser to look for any errors that occurred going through the steps. Once the payment details showed up in the Stripe dashboard, I then proceeded to write out a simple `success.html` page to display the `Payment ID`, `Item Name`, `Amount Paid` and `Shipping Address`.
 
 # Challenges
-The biggest challenge I had was learning simple HTML and CSS implementation with Python. I had spent a fair bit of time googling through the template code provided and how clicking each button will redirect the user to the next page.
+The biggest challenge I had was learning simple HTML and CSS implementation with Python. I had spent a fair bit of time reading through the template code provided and how clicking each button will redirect the user to the next page.
 
 # Improvements to the application
 Here are some ways that I will improve / extend the functionality of the application.
@@ -66,10 +66,10 @@ I would implement a mechanism to send an Email Confirmation with the order detai
 Reference - https://zapier.com/apps/mailgun/integrations/stripe
 
 ### Caching
-While implementing the application, I had to input my checkout details every time the server was restarted. I would implement a way to cache the customer's information. 
+While implementing the application, I had to input my checkout details every time the server was restarted. I would implement a way to persist the customer's input information. 
 
 ### Cart system
-Right now, it only allows customers to checkout one book at any time. I would implement a cart system where customers have the ability to add multiple books into their cart. I will also use `caching` mentioned in the previous improvement to ensure that the selections done by the customer are saved.  
+Right now, it only allows customers to checkout one book at any time. I would implement a cart system where customers have the ability to add multiple books into their cart. I would also use `caching` as mentioned previously to ensure that the selections done by the customer are saved.  
 
 ### Implement Stripe Radar
 I would add an additional layer of fraud detection with Stripe Radar. With the simplicity and customisable nature of Stripe Radar, enabling it would give an additional layer of security for the application.
@@ -78,4 +78,4 @@ I would add an additional layer of fraud detection with Stripe Radar. With the s
 Based on the location of the item that was purchased, this would introduce different ways to pay for an item outside of using a credit card. 
 
 # Key Takeaways
-Overall, this has been a really fun take home project that I've done. It has given me a deeper understanding of the flexibilites and features of using Stripe. It has also given me a glimpse of full stack development giving me a deeper appreciation of all developers world wide. 
+Overall, this has been a really fun take home project that I've done. It has provided hands-on experience with integrating Stripe into a full-stack application. I have also gained a stronger understanding of Stripe's flexibility and features, as well an exposure to end-to-end web development.
