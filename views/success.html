@@ -1,17 +1,26 @@
 {% extends 'layouts/main.html' %}
 
 {% block content %}
-<main>
-  <div class="mt-40 text-center text-success">
-    <h1>
-      <i class="far fa-check-circle"></i> 
-      Success!
-    </h1>
-  </div>
-  <div class="mt-40 text-center">
-    <div class="mt-20 text-center text-secondary border-placeholder">
-      Add details about the payment here!
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="text-center mt-5 mb-5">
+      <svg width="72" height="72" fill="currentColor" class="text-success mb-4" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.97 11.03a.75.75 0 0 0 1.08 0l3.992-3.992a.75.75 0 1 0-1.06-1.06L7.5 9.44 5.53 7.47a.75.75 0 0 0-1.06 1.06l2.5 2.5z"/>
+      </svg>
+      <h1 class="display-5">Payment Successful</h1>
+      <p class="lead text-muted">Thank you for your purchase!</p>
+      <div class="mt-4 text-left">
+        <p><strong>Payment ID:</strong> {{ payment_intent_id }}</p>
+        <p><strong>Item:</strong> {{ item }}</p>
+        <p><strong>Amount Paid:</strong> ${{ "%.2f"|format(amount / 100) }} {{ currency }}</p>
+        <p><strong>Shipping Address:</strong> {{ shipping_address }}</p>
+      </div>
+      <div class="mt-4">
+        <a href="/" class="btn btn-outline-primary">
+          Return to Home
+        </a>
+      </div>
     </div>
   </div>
-</main>
+</div>
 {% endblock %}

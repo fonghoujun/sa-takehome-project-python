@@ -17,20 +17,49 @@
     </div>
     <div class="card box-shadow mt-40">
       <div class="card-body">
-        <form name="payment-form">
+        <form name="payment-form" id="payment-form">
+          <div>
+            <label for="email">Name</label>
+            <input type="name" class="form-control" id="name" name="name" placeholder="Your Name">
+          </div>
           <div>
             <label for="email">Email address</label>
             <input type="email" class="form-control" id="email" name="email" placeholder="you@email.com">
           </div>
-          <div class="mt-20 text-center text-secondary border-placeholder">
-            Add Stripe Element here!
+          <div>
+            <label for="shipping-address">Shipping Address</label>
+            <input type="text" class="form-control" id="shipping-address" name="shipping-address" placeholder="123 Main St">
           </div>
-          <div class="mt-20">
-            <button type="submit" class="btn btn-lg btn-block btn-primary">Pay $<span class="amount" data-amount="{{ amount }}"></span></button>
+          <div>
+            <label for="shipping-city">City</label>
+            <input type="text" class="form-control" id="shipping-city" name="shipping-city" placeholder="City">
+          </div>
+          <div>
+            <label for="shipping-state">State</label>
+            <input type="text" class="form-control" id="shipping-state" name="shipping-state" placeholder="State">
+          </div>
+          <div>
+            <label for="shipping-zip">ZIP Code</label>
+            <input type="text" class="form-control" id="shipping-zip" name="shipping-zip" placeholder="12345">
+          </div>
+
+          <input type="hidden" id="item" name="item" value="{{ item }}">
+
+          <!-- Stripe Elements Payment Form -->
+          <div class="mt-20 text-center text-secondary border-placeholder">
+            <h2>Checkout</h2>
+              <div id="card-element">
+                <!-- Stripe Card Element -->
+              </div>
+              <div id="error-message" class="text-danger mt-2"></div>
+              <button id="submit" class="btn btn-primary mt-3">Pay Now!</button>
           </div>
         </form>
       </div>
     </div>
   </div>
 </div>
+
+<script src="https://js.stripe.com/v3/"></script>
+
 {% endblock %}
