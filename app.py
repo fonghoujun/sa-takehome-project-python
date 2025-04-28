@@ -99,7 +99,7 @@ def success(payment_intent_id):
       )
     
     charge = intent.latest_charge
-    email = charge.billing_details.email if charge else "Unavailable"
+    email = charge.billing_details.email
     amount = intent.amount
     currency = intent.currency.upper()
     item = intent.metadata.get('item_title')

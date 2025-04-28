@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
-    const item = new URLSearchParams(window.location.search).get('item');
-    const amount = document.querySelector('.amount')?.dataset.amount || '2000';
+    const item = document.getElementById('item').value;
+    const amount = document.getElementById('amount').value;
     const shippingAddress = {
       line1: document.getElementById('shipping-address').value,
       city: document.getElementById('shipping-city').value,
